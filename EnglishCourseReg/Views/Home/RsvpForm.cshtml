@@ -1,0 +1,31 @@
+﻿@model EnglishCourseReg.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <p>Ваше имя: @Html.TextBoxFor(x => x.Name)</p>
+        <p>Ваш email: @Html.TextBoxFor(x => x.Email)</p>
+        <p>Ваш телефон: @Html.TextBoxFor(x => x.Phone)</p>
+        <p>Какое расписание занятий Вам подходит?
+            @Html.DropDownListFor(x => x.WillAttend, new[] {
+                new SelectListItem() { Text = "Пн, Ср, Пт", Value = Boolean.TrueString},
+                new SelectListItem() { Text = "Вт, Чт, Сб", Value = Boolean.FalseString}
+            })
+        </p>
+        <input type="submit" value="Отправить форму RSVP" />
+    }
+</body>
+</html>
+

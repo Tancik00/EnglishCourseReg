@@ -1,0 +1,25 @@
+﻿@model EnglishCourseReg.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <div>
+        <h1>Спасибо, @Model.Name!</h1>
+        @if (Model.WillAttend == true) {
+            @:Мы рады, что Вы решили присоединиться к нам :) Ваше расписание: Пн, Ср, Пт. В скором времени Вам перезвонят для подробностей. ;)
+        }
+        else { 
+            @:Мы рады, что Вы решили присоединиться к нам :) Ваше расписание: Вт, Чт, Сб. В скором времени Вам перезвонят для подробностей.
+        }
+    </div>
+</body>
+</html>
