@@ -1,6 +1,5 @@
 ﻿using EnglishCourseReg.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace EnglishCourseReg.Controllers
 {
@@ -24,7 +23,6 @@ namespace EnglishCourseReg.Controllers
         {
             if (ModelState.IsValid)
                 // Нужно отправить данные нового гостя по электронной почте 
-                // организатору вечеринки.
                 return View("Thanks", guest);
             else
                 // Обнаружена ошибка проверки достоверности
